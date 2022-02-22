@@ -1,0 +1,1 @@
+execute store result entity @s Health float .001 run scoreboard players get @s ncd_sethealth

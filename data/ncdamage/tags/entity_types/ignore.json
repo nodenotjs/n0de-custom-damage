@@ -1,0 +1,31 @@
+{
+    "values": [
+        "#arrows",
+        "minecart",
+        "tnt_minecart",
+        "command_block_minecart",
+        "chest_minecart",
+        "furnace_minecart",
+        "armor_stand",
+        "fishing_bobber",
+        "painting",
+        "ender_pearl",
+        "eye_of_ender",
+        "falling_block",
+        "firework_rocket",
+        "fireball",
+        "small_fireball",
+        "glow_item_frame",
+        "item_frame",
+        "item",
+        "experience_orb",
+        "wither_skull",
+        "end_crystal",
+        "area_effect_cloud",
+        "boat",
+        "marker",
+        "trident",
+        "tnt",
+        "evoker_fangs"
+    ]
+}

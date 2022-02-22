@@ -1,0 +1,1 @@
+function ncdamage:internals/apply_changes/player
