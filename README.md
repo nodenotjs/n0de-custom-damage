@@ -138,6 +138,14 @@ Example:
 function ncdamage:get_fixed_max_health
 execute if score #maxhp ncd.temp matches 20000 run say 20hp
 ```
+
+## 🗑️ Uninstalling
+If you no longer want the datapack, you can uninstall it.
+
+Run the `/function ncdamage:internals/uninstall` command to remove all scoreboards created by the datapack, then remove the datapack from your world or disable it using `/datapack disable <datapack>`.
+
+Before you do this, make sure that no datapack is dependent on this one. Otherwise they will break!
+
 ## Technical Notes
 - Important Note: The resistance effect level 36 (specifically) is ignored. This is because the system uses it to not kill the player with simulated damage.
 - A player takes 1 tick to have his current health updated. In that tick, maybe any normal damage or healing (other than from the datapack) can end up being ignored, but it is irrelevant most of the time.
@@ -150,3 +158,4 @@ execute if score #maxhp ncd.temp matches 20000 run say 20hp
 | `function ncdamage:apply_changes` | Applies changes to the entity's life based on inputs. takes 1 tick to complete | `<entity @s context>`, `@sn cd_bypshurttime`, `@s ncd_bypsresef`, `@s ncd_damagetype`, `@s ncd_piercing`, `@s ncd_apiercing`, `@s ncd_epiercing` | `@s ncd_finaldamage`, `@s ncd_finalchange` |
 | `function ncdamage:get_fixed_health` | Returns the fixed HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#hp ncd.temp` |
 | `function ncdamage:get_fixed_max_health` | Returns the fixed max HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#maxhp ncd.temp` |
+| `function ncdamage:internals/uninstall` | Removes all scoreboards created by datapack | - | Chat Message |
