@@ -162,6 +162,7 @@ Before you do this, make sure that no datapack is dependent on this one. Otherwi
 - A player takes 1 tick to have his current health updated. In that tick, maybe any normal damage or healing (other than from the datapack) can end up being ignored, but it is irrelevant most of the time.
 - The datapack tries to respect the hurttime by not doing more damage than it should, but the game does not count the datapack damage into consideration, making it possible to do more damage through normal means.
 - When the player is below 1hp, it is not possible to do damage with attributes. So the player doesn't receive any real damage, but the current health is stored in the score `ncd.virtualhp`.   
+- The datapack tracks the life of all entities in order to correctly apply hurttime. It is not a 0 weight datapack, but it is considerably light. 
 
 ### All Commands:
 | Command | Description | Inputs | Outputs |
