@@ -10,11 +10,35 @@ A datapack tool to cause customized damage to entities and mobs. It can take int
 - Decimal Places (on the things listed above)
 - Options to cause damage
 - Return Values
+
+## ⁉️ Impementing in your Datapack
+Install the datapack in your world and you are done. Other datapacks will already be able to execute the commands from this datapack!
+
+However, there are some cautions and changes that you must take when developing your datapack using this.
+
+The datapack takes 1 tick to actually change the HP of the player, and in that time the maximum HP of the player is also changed. There are functions in this datapack that will return the correct value
+
+#### /function ncdamage:get_fixed_health
+Returns the HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
+Example:
+```mcfunction
+function ncdamage:get_fixed_health
+execute if score #hp ncd.temp matches 20000 run say 20hp
+```
+
+#### /function ncdamage:get_fixed_max_health
+Returns the max HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be. The section above shows how to deal with this.
+Example:
+```mcfunction
+function ncdamage:get_fixed_max_health
+execute if score #maxhp ncd.temp matches 20000 run say 20hp
+```
+
 ## ℹ️ How to Use
 
 Please Note:
 - All the scoreboard values in this datapack are in x1000 scale. i.e. 2500 equals 2.5
-- The HP takes 1 tick to be updated and in this time the maximum life of the entities is modified. See how to deal with it
+- The HP takes 1 tick to be updated and in this time the maximum life of the entities is modified. 
 - All the examples here would be of a function executing `as <entity>`
 
 ### 🩸 Custom Damage:
@@ -126,28 +150,6 @@ scoreboard players operation @s ncd_damage = #maxhp ncd.temp
 scoreboard players operation @s ncd_damage *= 20 number
 scoreboard players operation @s ncd_damage /= 100 number
 function ncdamage:apply_changes
-```
-## ⁉️ Impementing in your Datapack
-Install the datapack in your world and you are done. Other datapacks will already be able to execute the commands from this datapack!
-
-However, there are some cautions and changes that you must take when developing your datapack using this.
-
-The datapack takes 1 tick to actually change the HP of the player, and in that time the maximum HP of the player is also changed. There are functions in this datapack that will return the correct value
-
-#### /function ncdamage:get_fixed_health
-Returns the HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
-Example:
-```mcfunction
-function ncdamage:get_fixed_health
-execute if score #hp ncd.temp matches 20000 run say 20hp
-```
-
-#### /function ncdamage:get_fixed_max_health
-Returns the max HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
-Example:
-```mcfunction
-function ncdamage:get_fixed_max_health
-execute if score #maxhp ncd.temp matches 20000 run say 20hp
 ```
 
 ## 🗑️ Uninstalling
