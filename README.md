@@ -113,7 +113,9 @@ function ncdamage:apply_changes
 scoreboard players set @s ncd_heal 2000
 function ncdamage:apply_changes
 ```
+
 And of course, you can set or do any operation with any of these scores by other scores.
+
 Causing % damage:
 ```mcfunction
 # Causing damage equal to 20% of the entity's maximum Helath
