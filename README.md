@@ -14,17 +14,19 @@ A datapack tool to cause customized damage to entities and mobs. It can take int
 
 Please Note:
 - All the scoreboard values in this datapack are in x1000 scale. i.e. 2500 equals 2.5
+- The HP takes 1 tick to be updated and in this time the maximum life of the entities is modified. See how to deal with it
 - All the examples here would be of a function executing `as <entity>`
+
 ### 🩸 Custom Damage:
 
 Allows you to deal damage to any player/entity damage calculating the armor, enchantments, and resistance effect. Unfortunately, it does not take absorption into account.
 
-**Dealing 2.23hp damage:**
+**Deal 2.23hp damage:**
 ```mcfunction
 scoreboard players set @s ncd_damage 2230
 function ncdamage:apply_changes
 ```
-This was two quicks examples of how to do damage. You also have some **options**, such as ignoring hurttime and damage type. See the section below.
+This was two quick examples of how to do damage. You also have some **options**, such as ignoring hurttime and damage type. See the section below.
 
 
 #### Scoreboard Damage Options:
@@ -59,7 +61,7 @@ function ncdamage:apply_changes
 ### 💚 Custom Heal
 Heal any player/entity with as much as you want.
 
-**Healing 5hp:**
+**Heal 5hp:**
 ```mcfunction
 scoreboard players set @s ncd_heal 5000
 function ncdamage:apply_changes
@@ -67,7 +69,7 @@ function ncdamage:apply_changes
 ### 💛 Set Health
 Set the health of any mob/player. It ignores any defense and hurttime.
 
-**Setting Health to 10.505hp:**
+**Set Health to 10.505hp:**
 ```mcfunction
 scoreboard players set @s ncd_sethealth 10505
 function ncdamage:apply_changes
@@ -105,12 +107,46 @@ function ncdamage:apply_changes
 ```
 And of course, you can set or do any operation with any of these scores by other scores.
 ```mcfunction
-scoreboard players operation @s ncd_damage = #weapon_damage temp
-scoreboard players operation @s ncd_damage *= #5 number
+# Causing damage equal to 20% of the entity's maximum Helath
+# Note: the "numbers" scores are not datapack scores. You must create them and set the fakeplayer to the desired value
+
+function ncdamage:get_fixed_max_health
+scoreboard players operation @s ncd_damage = #maxhp ncd.temp
+scoreboard players operation @s ncd_damage *= 20 number
+scoreboard players operation @s ncd_damage /= 100 number
 function ncdamage:apply_changes
 ```
+## ⁉️ Impementing in your Datapack
+Install the datapack in your world and you are done. Other datapacks will already be able to execute the commands from this datapack!
+
+However, there are some cautions and changes that you must take when developing your datapack using this.
+
+The datapack takes 1 tick to actually change the HP of the player, and in that time the maximum HP of the player is also changed. There are functions in this datapack that will return the correct value
+
+#### /function ncdamage:get_fixed_health
+Returns the HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
+Example:
+```mcfunction
+function ncdamage:get_fixed_health
+execute if score #hp ncd.temp matches 20000 run say 20hp
+```
+
+#### /function ncdamage:get_fixed_max_health
+Returns the max HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
+Example:
+```mcfunction
+function ncdamage:get_fixed_max_health
+execute if score #maxhp ncd.temp matches 20000 run say 20hp
+```
 ## Technical Notes
+- Important Note: The resistance effect level 36 (specifically) is ignored. This is because the system uses it to not kill the player with simulated damage.
 - A player takes 1 tick to have his current health updated. In that tick, maybe any normal damage or healing (other than from the datapack) can end up being ignored, but it is irrelevant most of the time.
 - The datapack tries to respect the hurttime by not doing more damage than it should, but the game does not count the datapack damage into consideration, making it possible to do more damage through normal means.
-- When the player is below 1hp, it is not possible to do damage with attributes. So the player doesn't receive any real damage, but the current health is stored in the score ncd.virtualhp.
-- Important Note: The resistance effect level 36 (specifically) is ignored. This is because the system uses it to not kill the player with simulated damage.
+- When the player is below 1hp, it is not possible to do damage with attributes. So the player doesn't receive any real damage, but the current health is stored in the score `ncd.virtualhp`.   
+
+### All Commands:
+| Command | Description | Inputs | Outputs |
+| --- | --- | --- | --- |
+| `function ncdamage:apply_changes` | Applies changes to the entity's life based on inputs. takes 1 tick to complete | `<entity @s context>`, `@sn cd_bypshurttime`, `@s ncd_bypsresef`, `@s ncd_damagetype`, `@s ncd_piercing`, `@s ncd_apiercing`, `@s ncd_epiercing` | `@s ncd_finaldamage`, `@s ncd_finalchange` |
+| `function ncdamage:get_fixed_health` | Returns the fixed HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#hp ncd.temp` |
+| `function ncdamage:get_fixed_max_health` | Returns the fixed max HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#maxhp ncd.temp` |
