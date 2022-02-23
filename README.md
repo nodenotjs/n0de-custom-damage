@@ -114,6 +114,7 @@ scoreboard players set @s ncd_heal 2000
 function ncdamage:apply_changes
 ```
 And of course, you can set or do any operation with any of these scores by other scores.
+Causing % damage:
 ```mcfunction
 # Causing damage equal to 20% of the entity's maximum Helath
 # Note: the "numbers" scores are not datapack scores. You must create them and set the fakeplayer to the desired value
