@@ -36,8 +36,8 @@ ncd_bypshurttime: If it is 1 or greater, deals damage even if the player/entity 
 ncd_bypsresef: If it is 1 or greater, deals damage without calculating the resistance effect.
 ncd_damagetype: Sets the damage type (listed bellow). It is used to calculate enchantments or ignore armor.
 ncd_piercing: Set value of ncd_apiercing and ncd_epiercing to ncd_piercing.
-ncd_apiercing: Defines in % the armor piercing (only armor) (how much it will be ignored).
-ncd_epiercing: Defines in % the enchantments piercing (enchantments only) (how much it will be ignored).
+ncd_apiercing: Defines in % the armor piercing (only armor) (how much it will be ignored). Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
+ncd_epiercing: Defines in % the enchantments piercing (enchantments only) (how much it will be ignored).  Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
 
 # Damage Types:
 General/Any: any value or unset
@@ -50,11 +50,12 @@ Void/Effects (bypass the armor): -1
 
 Example using all options:
 ```mcfunction
-# Deals 12.5 projectile damage ignoring the hurttime, protection enchantments and resistance effect
+# Deals 12.5 projectile damage ignoring the hurttime, protection enchantments and resistance effect and piercing 50% of the armor
 scoreboard players set @s ncd_damage 12500
 scoreboard players set @s ncd_damagetype 3
 scoreboard players set @s ncd_bypshurttime 1
-scoreboard players set @s ncd_bypsenchants 1
+scoreboard players set @s ncd_epiercing 100000
+scoreboard players set @s ncd_apiercing 50000
 scoreboard players set @s ncd_bypsresef 1
 function ncdamage:apply_changes
 ```
@@ -95,6 +96,13 @@ scoreboard players set @s ncd_damagetype -1
 scoreboard players set @s ncd_bypsresef 1
 function ncdamage:apply_changes
 ```
+Now, piercing 50% armor and enchantments:
+```mcfunction
+scoreboard players set @s ncd_damage 18750
+scoreboard players set @s ncd_piercing 50000
+function ncdamage:apply_changes
+```
+
 You can also mix damage, healing and sethp in the same application and several times per tick.
 ```mcfunction
 scoreboard players set @s ncd_sethealth 20000
