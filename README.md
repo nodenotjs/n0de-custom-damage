@@ -27,7 +27,7 @@ execute if score #hp ncd.temp matches 20000 run say 20hp
 ```
 
 #### /function ncdamage:get_fixed_max_health
-Returns the max HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be. The section above shows how to deal with this.
+Returns the max HP of the entity in `#maxhp ncd.temp` taking into consideration the actual HP that should be.
 Example:
 ```mcfunction
 function ncdamage:get_fixed_max_health
@@ -38,7 +38,7 @@ execute if score #maxhp ncd.temp matches 20000 run say 20hp
 
 Please Note:
 - All the scoreboard values in this datapack are in x1000 scale. i.e. 2500 equals 2.5
-- The HP takes 1 tick to be updated and in this time the maximum life of the entities is modified. 
+- The HP takes 1 tick to be updated and in this time the maximum life of the entities is modified. The section above shows how to deal with this.
 - All the examples here would be of a function executing `as <entity>`
 
 ### 🩸 Custom Damage:
