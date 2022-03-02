@@ -2,7 +2,7 @@
 # N0de Custom Damage
 
 A datapack tool to cause customized damage to entities and mobs. It can take into account armor and different types of enchantments, ignore hurttime and several other options. 
-## ⭐ Freatures
+## ⭐ Features
 
 
 - Custom Damage based on armor, enchantments and resistance effect.
@@ -11,7 +11,7 @@ A datapack tool to cause customized damage to entities and mobs. It can take int
 - Options to cause damage
 - Return Values
 
-## ⁉️ Impementing in your Datapack
+## ⁉️ Implementing in your Datapack
 Install the datapack in your world and you are done. Other datapacks will already be able to execute the commands from this datapack!
 
 However, there are some cautions and changes that you must take when developing your datapack using this.
