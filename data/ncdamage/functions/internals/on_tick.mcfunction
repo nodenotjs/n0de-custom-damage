@@ -2,7 +2,7 @@
 #OPTIMIZE!
 #For some reason, run a single function at all entities is slower than multiples @e (in this case)
 execute as @e[type=!#ncdamage:ignore,tag=ncd.hurttimewillend] run function ncdamage:internals/track_life/reset_damage
-execute as @a[scores={ncd.deaths=1..}] run function ncdamage:internals/track_life/reset_damage_after_dead
+execute as @a[scores={ncd.deaths=1..},nbt=!{Health:0f}] run function ncdamage:internals/track_life/reset_damage_after_respawn
 tag @e[type=!#ncdamage:ignore,nbt={HurtTime:2s}] add ncd.hurttimewillend
 tag @a[scores={ncd.tstlhu=8}] add ncd.hurttimewillend
 

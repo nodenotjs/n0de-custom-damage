@@ -45,12 +45,17 @@ scoreboard objectives add ncd_finalchange dummy
 
 #useful system values
 scoreboard objectives add ncd.currentdmg dummy
+scoreboard players reset * ncd.currentdmg
 scoreboard objectives add ncd.currenthp dummy
+scoreboard players reset * ncd.currenthp
 scoreboard objectives add ncd.oldhsp dummy
+scoreboard players reset * ncd.oldhsp
 scoreboard objectives add ncd.virtualhp dummy
+scoreboard players reset * ncd.virtualhp
 scoreboard objectives add ncd.deaths deathCount
 
 scoreboard objectives add ncd.tstlhu dummy
+scoreboard players reset * ncd.tstlhu
 scoreboard objectives add ncd.temp dummy
 
 scoreboard objectives add ncd.num dummy
