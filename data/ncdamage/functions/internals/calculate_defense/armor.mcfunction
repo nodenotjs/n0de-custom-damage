@@ -1,4 +1,6 @@
-#DEIXAR MAIS PRECISO
+#planned: increase accuracy
+
+execute if score @s ncd_damagetype matches 5 run scoreboard players set @s ncd_apiercing 100000
 
 execute if score @s ncd_piercing matches -2147483648.. run function ncdamage:internals/apply_changes/set_aepiercing_from_piercing
 execute if score @s ncd_apiercing matches -2147483648.. run function ncdamage:internals/apply_changes/get_apercentage

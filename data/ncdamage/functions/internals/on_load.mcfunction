@@ -17,6 +17,7 @@ scoreboard objectives add ncd_sethealth dummy
 #Explosion: 2
 #Projectile: 3
 #Fall Damage: 4
+#Magic: 5
 #Void/Effects (ignores the armor): -1
 scoreboard objectives add ncd_damagetype dummy
 
