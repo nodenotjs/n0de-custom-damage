@@ -69,7 +69,8 @@ Fire: 1
 Explosion: 2
 Projectile: 3
 Fall Damage: 4
-Void/Effects (bypass the armor): -1
+Magic: 5 *(penetrates armor, but not enchantments)*
+Void/Effects: -1 *(bypass the armor)*
 ```
 
 Example using all options:
