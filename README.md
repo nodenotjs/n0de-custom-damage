@@ -55,23 +55,24 @@ This was two quick examples of how to do damage. You also have some **options**,
 
 #### Scoreboard Damage Options:
 ```txt
-# Options
-ncd_bypshurttime: If it is 1 or greater, deals damage even if the player/entity is in hurttime.
-ncd_bypsresef: If it is 1 or greater, deals damage without calculating the resistance effect.
-ncd_damagetype: Sets the damage type (listed bellow). It is used to calculate enchantments or ignore armor.
-ncd_piercing: Set value of ncd_apiercing and ncd_epiercing to ncd_piercing.
-ncd_apiercing: Defines in % the armor piercing (only armor) (how much it will be ignored). Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
-ncd_epiercing: Defines in % the enchantments piercing (enchantments only) (how much it will be ignored).  Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
+### Options:
+- ncd_bypshurttime: If it is 1 or greater, deals damage even if the player/entity is in hurttime.
+- ncd_bypsresef: If it is 1 or greater, deals damage without calculating the resistance effect.
+- ncd_damagetype: Sets the damage type (listed bellow). It is used to calculate enchantments or ignore armor.
+- ncd_piercing: Set value of ncd_apiercing and ncd_epiercing to ncd_piercing.
+- ncd_apiercing: Defines in % the armor piercing (only armor) (how much it will be ignored). Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
+- ncd_epiercing: Defines in % the enchantments piercing (enchantments only) (how much it will be ignored).  Min Value: 0 Max Value: 100000. It is possible to put values beyond that, but unexpected effects may occur!
 
-# Damage Types:
-General/Any: any value or unset
-Fire: 1
-Explosion: 2
-Projectile: 3
-Fall Damage: 4
-Magic: 5 *(penetrates armor, but not enchantments)*
-Void/Effects: -1 *(bypass the armor)*
+### Damage Types:
+- General/Any: any value or unset
+- Fire: 1
+- Explosion: 2
+- Projectile: 3
+- Fall Damage: 4
+- Magic: 5 (penetrates armor, but not enchantments)
+- Void/Effects: -1 (bypass the armor)
 ```
+
 
 Example using all options:
 ```mcfunction
