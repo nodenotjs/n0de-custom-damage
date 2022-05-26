@@ -74,3 +74,5 @@ scoreboard players set #2000 ncd.num 2000
 scoreboard players set #20000 ncd.num 20000
 scoreboard players set #100000 ncd.num 100000
 scoreboard players set #200000 ncd.num 200000
+
+scoreboard objectives add ncd.health health
