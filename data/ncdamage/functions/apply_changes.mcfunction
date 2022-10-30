@@ -1,6 +1,6 @@
 #!!!!!!!HELLO, SNIFFER! if you are reading this, you are probably analyzing into my datapack.
 #it is a bit messy at the moment and doesn't have many notes, but I plan to release an update adding notes and organizing some functions better
-#if you have any interest in knowing more about how this works, you can talk to me (N0de#0657) on discord!
+#if you have any interest in knowing more about how this works, you can talk to me (N0de#0001) on discord!
 #if you find something wrong with the calculations, you can add a bugreport on planetminecraft or talk to me on discord.
 
 #RESET AND SET SOME SCORES
