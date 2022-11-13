@@ -165,7 +165,7 @@ Before you do this, make sure that no datapack is dependent on this one. Otherwi
 - Important Note: The resistance effect level 36 (specifically) is ignored. This is because the system uses it to not kill the player with simulated damage.
 - A player takes 1 tick to have his current health updated. In that tick, maybe any normal damage or healing (other than from the datapack) can end up being ignored, but it is irrelevant most of the time.
 - The datapack tries to respect the hurttime by not doing more damage than it should, but the game does not count the datapack damage into consideration, making it possible to do more damage through normal means.
-- When the player is below 1hp, it is not possible to do damage with attributes. So the player doesn't receive any real damage, but the current health is stored in the score `ncd.virtualhp`. If the player takes fractional damage, the datapack will calculate this and if the health is 0,the datapack kills the entity with `/kill`
+- When the player is below 1hp, it is not possible to do damage with attributes. So the player doesn't receive any real damage, but the current health is stored and tracked in the score `ncd.virtualhp`. If the player takes, the datapack will calculate this and if the health is 0, the datapack kills the entity with `/kill`
 - The datapack tracks the life of all entities in order to correctly apply hurttime and fractional damage. This may have a small impact on performance.
 
 ### All Commands:
