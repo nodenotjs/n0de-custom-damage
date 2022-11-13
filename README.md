@@ -170,7 +170,7 @@ Before you do this, make sure that no datapack is dependent on this one. Otherwi
 | `function ncdamage:get_fixed_max_health` | Returns the fixed max HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#maxhp ncd.temp` |
 | `function ncdamage:internals/uninstall` | Removes all scoreboards created by datapack | - | Chat Message |
 
-## Other Notes:
+### Other Notes:
 - Important Note: The resistance effect level 36 (specifically) is ignored. This is because the system uses it to not kill the player with simulated damage.
 - A player takes 1 tick to have his current health updated. In that tick, maybe any normal damage or healing (other than from the datapack) can end up being ignored, but it is irrelevant most of the time.
 - The datapack tries to respect the hurttime by not doing more damage than it should, but the game does not count the datapack damage into consideration, making it possible to do more damage through normal means.
