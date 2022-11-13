@@ -165,7 +165,7 @@ Before you do this, make sure that no datapack is dependent on this one. Otherwi
 ### All Commands:
 | Command | Description | Inputs | Outputs |
 | --- | --- | --- | --- |
-| `function ncdamage:apply_changes` | Applies changes to the entity's life based on inputs. takes 1 tick to complete | `<entity @s context>`, `@sn cd_bypshurttime`, `@s ncd_bypsresef`, `@s ncd_damagetype`, `@s ncd_piercing`, `@s ncd_apiercing`, `@s ncd_epiercing` | `@s ncd_finaldamage`, `@s ncd_finalchange` |
+| `function ncdamage:apply_changes` | Applies changes to the entity's health based on inputs. takes 1 tick to complete | `<entity @s context>`, `@sn cd_bypshurttime`, `@s ncd_bypsresef`, `@s ncd_damagetype`, `@s ncd_piercing`, `@s ncd_apiercing`, `@s ncd_epiercing` | `@s ncd_finaldamage`, `@s ncd_finalchange` |
 | `function ncdamage:get_fixed_health` | Returns the fixed HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#hp ncd.temp` |
 | `function ncdamage:get_fixed_max_health` | Returns the fixed max HP of the entity. Serves to compensate the 1 tick delay of `apply_changes`. | `<entity @s context>` | `#maxhp ncd.temp` |
 | `function ncdamage:internals/uninstall` | Removes all scoreboards created by datapack | - | Chat Message |
