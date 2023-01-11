@@ -50,7 +50,7 @@ Allows you to deal damage to any player/entity damage calculating the armor, enc
 scoreboard players set @s ncd_damage 2230
 function ncdamage:apply_changes
 ```
-This was a quick examples of how to do damage. You also have some **options**, such as ignoring hurttime and damage type. See the section below.
+This was a quick example of how to do damage. You also have some **options**, such as ignoring hurttime and damage type. See the section below.
 
 
 #### Scoreboard Damage Options:
