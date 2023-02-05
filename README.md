@@ -13,6 +13,7 @@ A datapack tool to cause customized damage to entities and mobs. It can take int
 
 ## ⁉️ Implementing in your Datapack
 Install the datapack in your world and you are done. Other datapacks will already be able to execute the commands from this datapack!
+
 **Do not merge/merge the datapack inside your own!** This may cause conflict with other datapacks that use it.
 
 However, there are some cautions and changes that you must take when developing your datapack using this.
