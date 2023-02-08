@@ -1,6 +1,6 @@
 
 # N0de Custom Damage
-## ⚠️ Snapshot 23w06a added `/damage`, but the command is still not perfect. This datapack will be updated to complement `/damage`, keeping the same functionality from now
+## 🚨 Snapshot 23w06a added `/damage`, but the command is still not perfect. This datapack will be updated to complement `/damage`, keeping the same features as the current datapack
 
 A datapack tool to cause customized damage to entities and mobs. It can take into account armor and different types of enchantments, ignore hurttime and several other options. 
 ## ⭐ Features
