@@ -1,6 +1,6 @@
 
 # N0de Custom Damage
-## 🚨 Snapshot 23w06a (1.19.4 snapshot) added `/damage`. This datapack will likely be discontinued or perhaps updated to support damage via scores
+### 🚨 As 1.19.4 snapshot added `/damage`, this datapack is discontinued.
 
 A datapack tool to cause customized damage to entities and mobs. It can take into account armor and different types of enchantments, ignore hurttime and several other options. 
 ## ⭐ Features
